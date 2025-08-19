@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Signup.css"; // 👈 CSS import cheyyali
+import "./Signup.css";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -12,7 +12,7 @@ function Signup() {
 
     if (email === "adilshaiks7861@gmail.com" && password === "12345678") {
       alert("✅ SignUp Successful!");
-      navigate("/portfolio");
+      navigate("/portfolio"); // ✅ direct ga portfolio ki vellipothundi
     } else {
       alert("❌ Invalid Email or Password!");
     }

@@ -17,6 +17,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<Signup />} />
+        {/* 🔹 Portfolio ki route undali kani Navbar lo link petakudadhu */}
         <Route path="/portfolio" element={<Portfolio />} />
       </Routes>
     </Router>

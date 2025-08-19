@@ -1,60 +1,114 @@
-/* Container */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full Page Background */
 .signup-container {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  font-family: Arial, sans-serif;
+  height: 100vh;
+  background: #0d1b2a; /* same navbar bg */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  animation: bgFade 1s ease-in-out;
 }
 
-/* Card */
+/* Signup Card */
 .signup-card {
-  background: #fff;
-  padding: 40px 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  width: 350px;
+  background: #1b263b; /* dark navy card */
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0px 8px 25px rgba(0, 180, 216, 0.3); /* blue glow */
   text-align: center;
+  width: 350px;
+  color: white;
+  animation: cardSlide 1s ease-out;
+  border: 1px solid rgba(0, 180, 216, 0.2);
 }
 
 /* Title */
 .signup-card h2 {
   margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
+  font-size: 28px;
+  color: #00b4d8; /* same as navbar logo */
+  text-shadow: 0px 0px 10px rgba(0, 180, 216, 0.8);
+  animation: glow 2s infinite alternate;
 }
 
 /* Input fields */
 .signup-card input {
   width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  outline: none;
-  transition: 0.3s;
+  padding: 12px 14px;
+  margin: 12px 0;
+  border: 1px solid #444;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #1e2a3a; /* dark input */
+  color: white;
+  transition: 0.4s;
+  animation: fadeUp 1s ease-in-out;
 }
 
 .signup-card input:focus {
-  border-color: #667eea;
-  box-shadow: 0 0 5px rgba(102, 126, 234, 0.6);
+  border-color: #00b4d8;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.8);
+  transform: scale(1.03);
 }
 
 /* Button */
 .signup-card button {
   width: 100%;
   padding: 12px;
-  margin-top: 15px;
-  background: #667eea;
-  color: white;
+  background: #00b4d8; /* same navbar blue */
   border: none;
-  border-radius: 8px;
+  border-radius: 25px;
+  color: white;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  animation: bounceIn 1s ease-in-out;
 }
 
 .signup-card button:hover {
-  background: #5563d6;
+  transform: scale(1.08);
+  background: #0077b6; /* darker blue hover */
+  box-shadow: 0 0 15px rgba(0, 180, 216, 0.9);
+}
+
+/* ================= Animations ================= */
+
+/* Background fade */
+@keyframes bgFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Card slide */
+@keyframes cardSlide {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Heading glow */
+@keyframes glow {
+  from { text-shadow: 0 0 10px rgba(0, 180, 216, 0.6); }
+  to { text-shadow: 0 0 25px rgba(0, 180, 216, 1); }
+}
+
+/* Inputs fade */
+@keyframes fadeUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Button bounce */
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
 }
