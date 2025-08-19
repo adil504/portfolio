@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa"; // icons import
+import { FaLinkedin, FaInstagram, FaFacebook, FaGithub, FaTwitter } from "react-icons/fa"; 
 import "./Portfolio.css";
 
 function Portfolio() {
@@ -13,7 +13,7 @@ function Portfolio() {
       <section className="about">
         <h2>👤 About Me</h2>
         <p>
-          Hello! I am ADIL passionate full-stack developer who loves building
+          Hello! I am ADIL, a passionate full-stack developer who loves building
           modern web apps, learning new technologies, and solving real-world
           problems.
         </p>
@@ -72,7 +72,23 @@ function Portfolio() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaFacebook />  شیخ عادل
+            <FaFacebook /> شیخ عادل
+          </a>
+
+          <a
+            href="https://github.com/your-github-username"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub /> adil504
+          </a>
+
+          <a
+            href="https://twitter.com/your-twitter-username"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaTwitter /> AdilOfficial7861
           </a>
         </div>
       </section>
