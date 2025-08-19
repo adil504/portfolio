@@ -1,0 +1,116 @@
+.page-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #000000, #1a1a1a, #222222);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden; /* scroll bar remove */
+}
+
+.login-box {
+  background: #1c1c1c;
+  padding: 25px; /* less padding for compact look */
+  border-radius: 12px;
+  width: 340px;  /* smaller width */
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-box:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.8);
+}
+
+.login-box h2 {
+  color: limegreen;
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 24px; /* smaller font */
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px green;
+}
+
+label {
+  color: #f1f1f1;
+  display: block;
+  margin-top: 10px;
+  font-size: 14px; /* smaller font */
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #2a2a2a;
+  color: white;
+  font-size: 14px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border: 1.5px solid limegreen;
+  box-shadow: 0 0 8px limegreen;
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input {
+  padding-right: 38px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: limegreen;
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.eye-icon:hover {
+  color: white;
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.gender {
+  display: flex;
+  justify-content: space-around;
+  margin: 8px 0;
+  color: #00d0ff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: limegreen;
+  border: none;
+  border-radius: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background: #009900;
+  color: white;
+  box-shadow: 0 0 12px limegreen;
+}

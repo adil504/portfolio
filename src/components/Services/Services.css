@@ -1,0 +1,66 @@
+.services-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000, #1a1a1a, #222222);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.services-container h1 {
+  font-size: 40px;
+  margin-bottom: 40px;
+  color: limegreen;
+  text-shadow: 0 0 10px green;
+}
+
+.services-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.service-card {
+  background: #1c1c1c;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 0, 0.8);
+}
+
+.service-icon {
+  font-size: 50px;
+  color: limegreen;
+  margin-bottom: 15px;
+}
+
+.service-card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.service-card p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #d3d3d3;
+}
+.service-card a {
+  display: inline-block;
+  margin-top: 15px;
+  background: limegreen;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}

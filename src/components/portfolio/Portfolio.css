@@ -1,0 +1,56 @@
+
+/* 🔹 Portfolio container */
+.portfolio-container {
+  min-height: 100vh;
+  padding: 40px;
+  background: linear-gradient(135deg, #000000, #1c1c1c, #222222);
+  color: white;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 🔹 Title */
+.portfolio-container h1 {
+  font-size: 32px;
+  color: limegreen;
+  text-shadow: 0 0 10px limegreen;
+  margin-bottom: 15px;
+}
+
+/* 🔹 Subtitle */
+.portfolio-container p {
+  font-size: 16px;
+  color: #bbb;
+  margin-bottom: 30px;
+}
+
+/* 🔹 Projects container */
+.projects {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* small screen lo adjust avvadaniki */
+}
+
+/* 🔹 Project card design */
+.project-card {
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  width: 220px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #39ff14;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* 🔹 Hover effect */
+.project-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 0, 0.7);
+  color: white;
+}
+/* 🔹 Project title */
