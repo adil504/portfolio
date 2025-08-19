@@ -1,56 +1,165 @@
-
-/* 🔹 Portfolio container */
+/* 🔹 Portfolio Container */
 .portfolio-container {
   min-height: 100vh;
-  padding: 40px;
-  background: linear-gradient(135deg, #000000, #1c1c1c, #222222);
+  background: #0d0d0d; /* dark neat look */
   color: white;
-  text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px 20px;
+  text-align: center;
+  line-height: 1.6;
+  animation: fadeInBg 1.2s ease-in-out;
 }
 
 /* 🔹 Title */
 .portfolio-container h1 {
-  font-size: 32px;
-  color: limegreen;
-  text-shadow: 0 0 10px limegreen;
-  margin-bottom: 15px;
+  font-size: 42px;
+  font-weight: bold;
+  color: #39ff14;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #39ff14;
+  animation: fadeInUp 1.2s ease;
 }
 
 /* 🔹 Subtitle */
 .portfolio-container p {
-  font-size: 16px;
+  font-size: 18px;
   color: #bbb;
   margin-bottom: 30px;
+  animation: fadeInUp 1.4s ease;
 }
 
-/* 🔹 Projects container */
-.projects {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap; /* small screen lo adjust avvadaniki */
-}
-
-/* 🔹 Project card design */
-.project-card {
-  background: #1e1e1e;
+/* ================= Sections ================= */
+section {
+  margin: 50px auto;
+  max-width: 900px;
   padding: 30px;
   border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1.5s ease;
+}
+
+/* hover classy effect */
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
+}
+
+/* Section headings */
+section h2 {
+  font-size: 28px;
+  color: #39ff14;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px #39ff14;
+}
+
+/* ================= About ================= */
+.about p {
+  font-size: 17px;
+  color: #ccc;
+}
+
+/* ================= Skills ================= */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.skills-list span {
+  background: #1a1a1a;
+  color: #39ff14;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: 0.3s ease;
+  font-size: 15px;
+}
+
+.skills-list span:hover {
+  background: #39ff14;
+  color: black;
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.6);
+}
+
+/* ================= Projects ================= */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-card {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 10px;
   width: 220px;
-  text-align: center;
   font-size: 18px;
   font-weight: bold;
   color: #39ff14;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.25);
+  transition: all 0.3s ease;
 }
 
-/* 🔹 Hover effect */
 .project-card:hover {
   transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 0 25px rgba(0, 255, 0, 0.7);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
   color: white;
 }
-/* 🔹 Project title */
+
+/* ================= Contact ================= */
+.contact p {
+  font-size: 17px;
+  color: #ccc;
+}
+
+.contact a {
+  color: #39ff14;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact a:hover {
+  color: #00ff88;
+  text-shadow: 0 0 6px #39ff14;
+}
+
+/* ================= Animations ================= */
+@keyframes fadeInBg {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Social links */
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: #39ff14;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  padding: 8px 15px;
+  border-radius: 6px;
+}
+
+.social-links a:hover {
+  background: rgba(57, 255, 20, 0.1);
+  color: #00ff88;
+  text-shadow: 0 0 8px #39ff14;
+}

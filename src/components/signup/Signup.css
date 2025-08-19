@@ -11,104 +11,124 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #0d1b2a; /* same navbar bg */
+  background: #000; /* pure black */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  animation: bgFade 1s ease-in-out;
 }
 
 /* Signup Card */
 .signup-card {
-  background: #1b263b; /* dark navy card */
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0px 8px 25px rgba(0, 180, 216, 0.3); /* blue glow */
+  background: rgba(20, 20, 20, 0.95);
+  padding: 45px;
+  border-radius: 18px;
+  box-shadow: 0px 10px 30px rgba(0, 255, 150, 0.3);
   text-align: center;
-  width: 350px;
+  width: 370px;
   color: white;
-  animation: cardSlide 1s ease-out;
-  border: 1px solid rgba(0, 180, 216, 0.2);
+  border: 1px solid rgba(0, 255, 136, 0.4);
+
+  /* Center Entry Animation */
+  opacity: 0;
+  transform: scale(0.7);
+  animation: zoomIn 1.2s ease forwards;
 }
 
 /* Title */
 .signup-card h2 {
   margin-bottom: 20px;
-  font-size: 28px;
-  color: #00b4d8; /* same as navbar logo */
-  text-shadow: 0px 0px 10px rgba(0, 180, 216, 0.8);
+  font-size: 30px;
+  color: #00ff88;
+  text-shadow: 0px 0px 15px rgba(0, 255, 136, 0.8);
   animation: glow 2s infinite alternate;
 }
 
-/* Input fields */
+/* Input Fields */
 .signup-card input {
   width: 100%;
-  padding: 12px 14px;
-  margin: 12px 0;
-  border: 1px solid #444;
-  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 14px 0;
+  border: 1px solid #333;
+  border-radius: 12px;
   font-size: 15px;
-  background: #1e2a3a; /* dark input */
+  background: #111;
   color: white;
   transition: 0.4s;
-  animation: fadeUp 1s ease-in-out;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.8s ease forwards;
 }
 
+/* Stagger Effect */
+.signup-card input:nth-child(2) { animation-delay: 0.3s; }
+.signup-card input:nth-child(3) { animation-delay: 0.5s; }
+.signup-card input:nth-child(4) { animation-delay: 0.7s; }
+
+/* Input Focus Glow */
 .signup-card input:focus {
-  border-color: #00b4d8;
-  outline: none;
-  box-shadow: 0 0 10px rgba(0, 180, 216, 0.8);
-  transform: scale(1.03);
+  border-color: #00ff88;
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.8);
+  transform: scale(1.05);
 }
 
 /* Button */
 .signup-card button {
   width: 100%;
-  padding: 12px;
-  background: #00b4d8; /* same navbar blue */
+  padding: 14px;
+  background: linear-gradient(135deg, #00ff88, #00cc66);
   border: none;
   border-radius: 25px;
-  color: white;
-  font-size: 16px;
+  color: black;
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
-  animation: bounceIn 1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  animation: bounceIn 1s ease-in-out 1s forwards;
+  opacity: 0;
+}
+
+/* Button Hover Shine */
+.signup-card button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75px;
+  width: 50px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+.signup-card button:hover::before {
+  left: 120%;
 }
 
 .signup-card button:hover {
-  transform: scale(1.08);
-  background: #0077b6; /* darker blue hover */
-  box-shadow: 0 0 15px rgba(0, 180, 216, 0.9);
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #00cc66, #00ff88);
+  box-shadow: 0 0 20px #00ff88;
 }
 
 /* ================= Animations ================= */
-
-/* Background fade */
-@keyframes bgFade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes zoomIn {
+  0% { opacity: 0; transform: scale(0.7); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
-/* Card slide */
-@keyframes cardSlide {
-  from { transform: translateY(-50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-/* Heading glow */
 @keyframes glow {
-  from { text-shadow: 0 0 10px rgba(0, 180, 216, 0.6); }
-  to { text-shadow: 0 0 25px rgba(0, 180, 216, 1); }
+  from { text-shadow: 0 0 10px rgba(0, 255, 136, 0.6); }
+  to { text-shadow: 0 0 25px rgba(0, 255, 136, 1); }
 }
 
-/* Inputs fade */
-@keyframes fadeUp {
-  from { transform: translateY(20px); opacity: 0; }
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* Button bounce */
 @keyframes bounceIn {
-  0% { transform: scale(0.5); opacity: 0; }
-  60% { transform: scale(1.1); opacity: 1; }
-  100% { transform: scale(1); }
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); opacity: 1; }
 }

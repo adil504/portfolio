@@ -5,23 +5,32 @@
   text-align: center;
   padding: 50px 20px;
   font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
 }
 
+/* Heading Animation */
 .contact-container h1 {
   font-size: 40px;
   margin-bottom: 30px;
   color: limegreen;
   text-shadow: 0 0 10px green;
+  opacity: 0;
+  animation: fadeDown 1.5s ease forwards;
 }
 
+/* Form Container Animation */
 .contact-form {
   max-width: 500px;
   margin: auto;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  opacity: 0;
+  animation: fadeUp 1.8s ease forwards;
+  animation-delay: 0.8s;
 }
 
+/* Inputs & Textarea */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -32,15 +41,19 @@
   background: #2a2a2a;
   color: white;
   font-size: 16px;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
+/* Input Glow Focus */
 .contact-form input:focus,
 .contact-form textarea:focus {
   border: 1.5px solid limegreen;
-  box-shadow: 0 0 8px limegreen;
+  box-shadow: 0 0 12px limegreen;
+  animation: pulseGlow 1s infinite alternate;
 }
 
+/* Submit Button */
 .contact-form button {
   padding: 12px;
   background: limegreen;
@@ -49,10 +62,52 @@
   border-radius: 8px;
   font-size: 18px;
   cursor: pointer;
+  overflow: hidden;
+  position: relative;
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
+/* Button Hover Bounce + Ripple */
 .contact-form button:hover {
   background: #00ff7f;
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 0 15px limegreen;
+}
+
+.contact-form button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.contact-form button:hover::after {
+  width: 300%;
+  height: 300%;
+}
+
+/* ================= Animations ================= */
+
+/* Heading Slide Down */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form Fade Up */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Pulse Glow on Focus */
+@keyframes pulseGlow {
+  from { box-shadow: 0 0 8px limegreen; }
+  to { box-shadow: 0 0 15px limegreen; }
 }

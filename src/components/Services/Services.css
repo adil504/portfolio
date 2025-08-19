@@ -5,52 +5,77 @@
   text-align: center;
   padding: 50px 20px;
   font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
 }
 
+/* Heading Animation */
 .services-container h1 {
   font-size: 40px;
   margin-bottom: 40px;
   color: limegreen;
   text-shadow: 0 0 10px green;
+  animation: fadeDown 1.5s ease forwards;
 }
 
+/* Service Cards Grid */
 .services-box {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   justify-content: center;
+  opacity: 0;
+  animation: fadeUp 1.5s ease forwards;
+  animation-delay: 1s;
 }
 
+/* Service Card */
 .service-card {
   background: #1c1c1c;
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  opacity: 0;
+  animation: cardStagger 1s ease forwards;
 }
 
+/* Stagger Animation for Each Card */
+.service-card:nth-child(1) { animation-delay: 1s; }
+.service-card:nth-child(2) { animation-delay: 1.3s; }
+.service-card:nth-child(3) { animation-delay: 1.6s; }
+.service-card:nth-child(4) { animation-delay: 1.9s; }
+
+/* Hover 3D Tilt */
 .service-card:hover {
-  transform: scale(1.05);
+  transform: perspective(600px) rotateY(5deg) scale(1.05);
   box-shadow: 0 0 25px rgba(0, 255, 0, 0.8);
 }
 
+/* Service Icon Animation */
 .service-icon {
   font-size: 50px;
   color: limegreen;
   margin-bottom: 15px;
+  display: inline-block;
+  animation: iconPulse 2s infinite;
 }
 
+/* Card Title */
 .service-card h2 {
   font-size: 24px;
   margin-bottom: 10px;
   color: white;
 }
 
+/* Card Text */
 .service-card p {
   font-size: 16px;
   line-height: 1.5;
   color: #d3d3d3;
 }
+
+/* Card Button */
 .service-card a {
   display: inline-block;
   margin-top: 15px;
@@ -59,8 +84,60 @@
   font-size: 16px;
   font-weight: bold;
   padding: 10px 20px;
-  border: none;
   border-radius: 10px;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
   transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card a:hover {
+  background: white;
+  color: limegreen;
+  box-shadow: 0 0 20px limegreen;
+}
+
+/* Ripple Effect on Button */
+.service-card a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.service-card a:hover::after {
+  width: 300%;
+  height: 300%;
+}
+
+/* ================= Animations ================= */
+
+/* Fade Down Heading */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade Up Section */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Card Stagger */
+@keyframes cardStagger {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Icon Pulse + Rotate */
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(10deg); }
 }
