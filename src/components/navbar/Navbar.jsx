@@ -5,7 +5,8 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <nav className="navbar">
-      <h2 className="logo">MY APP OFFICAL</h2>
+      <h2 className="logo">MY PROJECT OFFICIAL</h2>
+      <p className="p">TO CREATED BY [SHAIK ADIL]</p>
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>

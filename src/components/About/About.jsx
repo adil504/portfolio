@@ -7,13 +7,13 @@ function About() {
       <div className="about-box">
         <h1>About Me</h1>
         <p>
-          Hi 👋, I am <b>Your Name</b>.  
+          Hi 👋, I am <b>SHAIK ADIL</b>.  
           I am learning <span className="highlight">Full Stack Development</span>  
           with a passion for creating stylish and functional web applications.
         </p>
 
         <p>
-          I love working with <span className="highlight">React, HTML, CSS, and JavaScript</span>.  
+          I love working with <span className="highlight">React.jS, HTML, CSS,  JavaScript, Node.js, Express.js, and MongoDB</span>.  
           My goal is to become a <b>MERN Stack Developer</b> 🚀.
         </p>
 

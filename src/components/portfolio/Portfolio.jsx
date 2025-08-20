@@ -7,7 +7,7 @@ function Portfolio() {
     <div className="portfolio-container">
       {/* Title */}
       <h1>🎉 Welcome to My Portfolio 🎉</h1>
-      <p>This is your private portfolio, visible only after login ✅</p>
+      <p>This is my private portfolio, visible only after login ✅</p>
 
       {/* About Section */}
       <section className="about">
